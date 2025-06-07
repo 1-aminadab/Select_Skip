@@ -3,15 +3,19 @@ import GlassBackground from './components/GlassBackground';
 import Home from './pages/Home';
 import SummaryBar from './components/SummaryBar';
 import Steps from './components/Steps';
+import { AppProvider } from './context/AppContext';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <GlassBackground />
-      <Steps/>
-      <Home />
-      <SummaryBar/>
-    </div>
+    <AppProvider>
+      <div className="App">
+        <GlassBackground />
+        <Steps />
+        <Home />
+        <SummaryBar />
+      </div>
+    </AppProvider>
+
   );
 };
 

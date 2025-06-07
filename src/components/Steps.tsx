@@ -1,18 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "./Steps.module.css";
+import { useProvider } from "../context/AppContext";
+import { steps } from "../data/steps";
 
-const steps = [
-  { icon: "📍", label: "Postcode" },
-  { icon: "🗑️", label: "Waste Type" },
-  { icon: "🚛", label: "Select Skip" },
-  { icon: "🛡️", label: "Permit Check" },
-  { icon: "📅", label: "Choose Date" },
-  { icon: "💳", label: "Payment" },
-];
 
 function Steps() {
-  const currentStep = 3;
+    const { progress:currentStep} = useProvider();
+  
   const blocksRef = useRef<any[]>([]);
   const linesRef = useRef<any[]>([]);
 

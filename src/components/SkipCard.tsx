@@ -79,7 +79,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skipData, disabled, selected, onSel
       <div className={styles.cardContent} >
         <img src={skipImage} alt="Skip" className={styles.skipImg} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}/>
 
-        <h3 className={styles.skipTitle} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}>{skipData.size}m³ Skip</h3>
+        <h3 className={styles.skipTitle} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}>{skipData.size} Yard Skip</h3>
         <p className={styles.skipSubtext} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}>Perfect for household waste</p>
         <p className={styles.skipPrice} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}>£{Math.round(skipData.price_before_vat)}</p>
 

@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SkipCard from '../components/SkipCard';
 import styles from './Home.module.css';
 import { skipData } from '../data/skipData';
+import { useProvider } from '../context/AppContext';
 
 const Home: React.FC = () => {
-  const [selectedSkipId, setSelectedSkipId] = useState<number | null>(skipData[0].id);
+  const { selectedSkipId, setSelectedSkipId } = useProvider();
 
   const handleSelect = (id: number) => {
-    if (skipData.find(skip => skip.id === id)?.disabled) return; // prevent selecting disabled
+    if (skipData.find(skip => skip.id === id)?.disabled) return;
     setSelectedSkipId(id);
   };
 
   return (
     <div className={styles.homeWrapper}>
-      <div style={{ lineHeight: '0.5', alignItems:'center'}}>
-        <h1 style={{fontSize:46, textAlign:'center'}}>Choose Your Skip Size</h1>
-      <h3>Select the skip size that best suits your needs</h3>
+      <div className={styles.textContainer}>
+        <h1 className={styles.heading}>Choose Your Skip Size</h1>
+        <h3 className={styles.subheading}>Select the skip size that best suits your needs</h3>
       </div>
 
       <div className={styles.cardsGrid}>
@@ -24,7 +25,7 @@ const Home: React.FC = () => {
             key={skip.id}
             skipData={skip}
             selected={skip.id === selectedSkipId}
-            disabled={!skip.allowed_on_road }
+            disabled={!skip.allowed_on_road}
             onSelect={() => handleSelect(skip.id)}
           />
         ))}

@@ -105,7 +105,7 @@
   top: 0;
   height: 100%;
   width: 0;
-  background: linear-gradient(to right, var(--color-gold), var(--color-accent)); /* #d4f05a, #2cb67d */
+  background: linear-gradient(to right, var(--color-gold), var(--color-accent));
   border-radius: 1px;
   animation: flowGradient 2s infinite ease-in-out;
   animation-play-state: paused;
@@ -157,7 +157,7 @@
   }
 
   .stepLabel {
-    font-size: 11px;
+    font-size: 9px;
     width: 50px;
   }
 
