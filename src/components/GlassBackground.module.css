@@ -1,0 +1,87 @@
+.backgroundContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: rotate(-15deg);
+  position: fixed;
+  z-index: 0;
+  gap: 0;
+  background-color: var(--color-bg-black);
+}
+
+.rowWrapper {
+  width: 120%;
+  height: 19.5vh;
+  background-color: var(--color-bg-black); /* red */
+}
+
+.row {
+  display: flex;
+  width: fit-content;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  font-size: 18vh;
+  font-weight: var(--font-weight-bolder);
+  white-space: nowrap;
+  gap: 2vw;
+}
+
+.left .row {
+  animation-name: scroll-left;
+  animation-duration: 75s;
+}
+
+.right .row {
+  animation-name: scroll-right;
+  animation-duration: 85s;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.gsap {
+  color: var(--color-gold); /* #f7c455 */
+}
+
+.webflow {
+  color: var(--color-blue); /* #2a49fd */
+}
+
+.glassCard {
+  position: absolute;
+  top: -0%;
+  left: -2%;
+  transform: rotate(15deg);
+  width: 110%;
+  height: 110%;
+  background: var(--color-glass-dark); /* rgba(0, 0, 0, 0.733) */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border); /* rgba(255, 255, 255, 0.2) */
+  z-index: 10;
+  text-align: center;
+  color: var(--color-white);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

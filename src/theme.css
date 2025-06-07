@@ -1,0 +1,50 @@
+/* theme.css */
+:root {
+  /* Colors */
+  --color-bg-dark: #1f2937;
+  --color-bg-black: #000000;
+  --color-glass-dark: rgba(0, 0, 0, 0.801);
+  --color-glass-light: rgba(255, 255, 255, 0.05);
+  --color-white: #ffffff;
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-accent: #10b981;
+  --color-warning: #ef4444;
+  --color-gold: #f7c455;
+  --color-muted: #9ca3af;
+  --color-price: #06c556;
+  --color-yellow: #ecf83e;
+  --color-blue: #2a49fd;
+
+  /* Shadows */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-btn: 0 4px 12px rgba(59, 130, 246, 0.4);
+  --shadow-glow: 0 0 20px rgba(209, 189, 4, 0.6);
+  --shadow-inner: inset 0 0 6px rgba(255, 255, 255, 0.05), 0 0 10px rgba(0, 0, 0, 0.2);
+
+  /* Glass */
+  --glass-blur: blur(12px);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur-light: blur(8px);
+
+  /* Border radius */
+  --radius-xl: 30px;
+  --radius-lg: 18px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  /* Typography */
+  --font-weight-bold: 700;
+  --font-weight-bolder: 900;
+  --font-size-xl: 1.5rem;
+  --font-size-lg: 1.3rem;
+  --font-size-md: 1rem;
+  --font-size-sm: 0.9rem;
+  --font-size-xs: 0.75rem;
+
+  /* Spacing */
+  --spacing-lg: 24px;
+  --spacing-md: 16px;
+  --spacing-sm: 12px;
+  --spacing-xs: 8px;
+}
