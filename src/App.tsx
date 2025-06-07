@@ -9,10 +9,7 @@ const App: React.FC = () => {
   return (
     <AppProvider>
       <div className="App">
-        <GlassBackground />
-        <Steps />
-        <Home />
-        <SummaryBar />
+        <Home/>
       </div>
     </AppProvider>
 

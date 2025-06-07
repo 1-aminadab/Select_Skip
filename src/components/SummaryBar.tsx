@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import styles from './SummaryBar.module.css';
 import { useProvider } from '../context/AppContext';
+import { steps } from '../data/steps';
 
 const SummaryBar: React.FC = () => {  
   const { selectedSkip, progress, decrementProgress, incrementProgress } = useProvider();
@@ -46,6 +47,7 @@ const SummaryBar: React.FC = () => {
             <button
               ref={(el) => (buttonRefs.current[0] = el)}
               className={styles.outlinedBtn}
+              style={{display: progress === 0 ? 'none' : 'inline-block'}}
               onClick={decrementProgress}
             >
               ← Back
@@ -55,7 +57,7 @@ const SummaryBar: React.FC = () => {
               className={styles.animatedBtn}
               onClick={incrementProgress}
             >
-              Continue <span className={styles.arrow}>→</span>
+             {progress === steps.length - 1 ? 'Submit' : 'Continue'}  <span className={styles.arrow}>→</span>
             </button>
           </div>
         </div>
