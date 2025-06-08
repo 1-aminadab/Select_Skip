@@ -17,52 +17,7 @@ interface SkipCardProps {
 const SkipCard: React.FC<SkipCardProps> = ({ skipData, disabled, selected, onSelect }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!cardRef.current) return;
-
-    gsap.from(cardRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: cardRef.current,
-        start: 'top 90%',
-        toggleActions: 'play none none reverse'
-      }
-    });
-
-    const handleMouseEnter = () => {
-      if (!disabled) {
-        gsap.to(cardRef.current, {
-          scale: 1.02,
-          boxShadow: '0px 10px 25px rgba(0,0,0,0.2)',
-          duration: 0.3
-        });
-      }
-    };
-
-    const handleMouseLeave = () => {
-      gsap.to(cardRef.current, {
-        scale: 1,
-        boxShadow: '0px 8px 24px rgba(0,0,0,0.1)',
-        duration: 0.3
-      });
-    };
-
-    const card = cardRef.current;
-    if (!disabled) {
-      card.addEventListener('mouseenter', handleMouseEnter);
-      card.addEventListener('mouseleave', handleMouseLeave);
-    }
-
-    return () => {
-      if (!disabled) {
-        card.removeEventListener('mouseenter', handleMouseEnter);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-      }
-    };
-  }, [disabled]);
+ 
 
   return (
     <div

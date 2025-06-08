@@ -5,6 +5,8 @@ import SummaryBar from '../components/SummaryBar';
 import Steps from '../components/Steps';
 import { useProvider } from '../context/AppContext';
 import OtherSteps from './OtherSteps';
+import styles from './styles/Home.module.css';
+
 
 const Home: React.FC = () => {
     const { progress } = useProvider();
@@ -12,12 +14,15 @@ const Home: React.FC = () => {
         <>
             <GlassBackground />
             <Steps />
-            {
+            <div className={styles.stepsContainer}>
+             {
              progress === 2 ?             
              <SelectSkip /> :
              <OtherSteps/>
 
-            }
+            }    
+            </div>
+           
             <SummaryBar />
         </>
 

@@ -1,0 +1,17 @@
+.stepsContainer {
+   padding-top: 120px; 
+}
+
+@media (max-width: 800px) {
+.stepsContainer {
+   padding-top: 200px; 
+}
+ 
+}
+
+@media (max-width: 480px) {
+.stepsContainer {
+   padding-top: 200px; 
+}
+ 
+}
