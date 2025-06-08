@@ -60,7 +60,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skipData, disabled, selected, onSel
 
         <button className={styles.selectBtn} disabled={disabled} onClick={!disabled ? onSelect : undefined}
         >
-          {selected ? 'Selected' : 'Select'} <span className={styles.arrow}>→</span>
+          {selected ? 'Selected' : 'Select'} <span className={styles.arrow}>{!selected && '→'}</span>
         </button>
 
         {/* Selected badge */}
