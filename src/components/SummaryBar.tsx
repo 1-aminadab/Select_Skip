@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import styles from './styles/SummaryBar.module.css';
 import { useProvider } from '../context/AppContext';
 import { steps } from '../data/steps';
+import TextAnimation from './atom/TextAnimation';
 
 const SummaryBar: React.FC = () => {  
   const { selectedSkip, progress, decrementProgress, incrementProgress } = useProvider();
@@ -54,20 +55,29 @@ const SummaryBar: React.FC = () => {
       };
     }
   }, [lastScrollY]);
-
+  const selectSkip = progress === 2;
   return (
     <div className={styles.fixedBar} ref={barRef} style={{ display: show ? 'flex' : 'none' }}>
       <div className={styles.summaryContainer}>
         <p className={styles.notice}>
-          Imagery and information shown may not reflect exact shape or size. Options and accessories may cost extra.
+          {
+            selectSkip ? 'Imagery and information shown may not reflect exact shape or size. Options and accessories may cost extra.' :
+            steps[progress].label + ' description'
+          }
         </p>
 
         <div className={styles.content}>
-          <div className={styles.skipInfo}>
+          {
+            selectSkip ? <div className={styles.skipInfo}>
             <span className={styles.skipTitle}>{selectedSkip?.size} Yard Skip</span>
             <span className={styles.skipPrice}>£{selectedSkip?.price_before_vat}</span>
             <span className={styles.skipDuration}>{selectedSkip?.hire_period_days} day hire</span>
+          </div> :
+          <div>
+          <TextAnimation text={steps[progress].label} size={'clamp(1rem, 1.5vw, 2rem)'}/>
           </div>
+          }
+          
 
           <div className={styles.buttonGroup}>
             <button

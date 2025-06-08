@@ -4,9 +4,10 @@ import "./TextAnimation.css";
 
 interface TextAnimationProps {
   text: string;
+  size: string;
 }
 
-const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
+const TextAnimation: React.FC<TextAnimationProps> = ({ text, size }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
 
   return (
     <div className="insane-container">
-      <div className="text" ref={containerRef}>
+      <div className="text" ref={containerRef} style={{ fontSize:size }}>
         {[...text].map((char, i) => (
           <span className="char" key={i}>
             {char === " " ? "\u00A0" : char}

@@ -1,14 +1,13 @@
 .insane-container {
-  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(ellipse at center, #111 0%, #000 100%);
   overflow: hidden;
 }
 
 .text {
-  font-size: clamp(2rem, 8vw, 8rem); /* Responsive from 2rem up to 8rem */  font-weight: 800;
+  font-size: clamp(2rem, 8vw, 8rem); /* Responsive from 2rem up to 8rem */  
+  font-weight: 800;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.2rem;
   display: flex;
