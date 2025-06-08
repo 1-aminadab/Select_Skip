@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import styles from './SummaryBar.module.css';
+import styles from './styles/SummaryBar.module.css';
 import { useProvider } from '../context/AppContext';
 import { steps } from '../data/steps';
 

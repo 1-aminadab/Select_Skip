@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import styles from './GlassBackground.module.css';
+import styles from './styles/GlassBackground.module.css';
 
 interface GlassBackgroundProps {
   children?: ReactNode;

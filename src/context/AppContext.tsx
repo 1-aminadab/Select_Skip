@@ -26,7 +26,6 @@ const SkipContext = createContext<SkipContextType | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [selectedSkipId, setSelectedSkipId] = useState<number | null>(allSkips[0].id);
   
-  // progress refers to index of steps, defaulting to 2 => "Select Skip"
   const [progress, setProgress] = useState<number>(2);
 
   const selectedSkip = allSkips.find(skip => skip.id === selectedSkipId) || null;

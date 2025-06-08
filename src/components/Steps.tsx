@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import styles from "./Steps.module.css";
+import styles from "./styles/Steps.module.css";
 import { useProvider } from "../context/AppContext";
 import { steps } from "../data/steps";
 

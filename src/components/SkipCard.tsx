@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import styles from './SkipCard.module.css';
+import styles from './styles/SkipCard.module.css';
 import skipImage from '../assets/skip.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

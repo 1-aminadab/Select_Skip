@@ -1,6 +1,6 @@
 import React from 'react';
 import SkipCard from '../components/SkipCard';
-import styles from './SelectSkip.module.css';
+import styles from './styles/SelectSkip.module.css';
 import { skipData } from '../data/skipData';
 import { useProvider } from '../context/AppContext';
 

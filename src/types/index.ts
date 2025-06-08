@@ -1,4 +1,3 @@
-// Define the TypeScript interface
 export interface SkipData {
   id: number;
   size: number;
@@ -10,11 +9,11 @@ export interface SkipData {
   postcode: string;
   area: string;
   forbidden: boolean;
-  created_at: string; // ISO date string
-  updated_at: string; // ISO date string
+  created_at: string;
+  updated_at: string;
   allowed_on_road: boolean;
   allows_heavy_waste: boolean;
-  totalPrice?: number; // Optional computed field
-  disabled?: boolean;  // Derived property
-  tooltip?: string;    // Derived property
+  totalPrice?: number;
+  disabled?: boolean;
+  tooltip?: string;
 }
