@@ -37,7 +37,6 @@ const SkipCard: React.FC<SkipCardProps> = ({ skipData, disabled, selected, onSel
         <p className={styles.skipSubtext} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}>Perfect for household waste</p>
         <p className={styles.skipPrice} style={{filter: disabled ? 'grayscale(100%)' : 'none'}}>£{Math.round(skipData.price_before_vat)}</p>
 
-        {/* Warning messages */}
           <div className={styles.warningMessages}>
               <div className={styles.warningMessage}>
                 {!skipData.allowed_on_road && (
@@ -63,7 +62,6 @@ const SkipCard: React.FC<SkipCardProps> = ({ skipData, disabled, selected, onSel
           {selected ? 'Selected' : 'Select'} <span className={styles.arrow}>{!selected && '→'}</span>
         </button>
 
-        {/* Selected badge */}
         {selected && <div className={styles.badge}>Selected</div>}
       </div>
     </div>

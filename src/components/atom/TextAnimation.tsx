@@ -4,7 +4,7 @@ import "./TextAnimation.css";
 
 interface TextAnimationProps {
   text: string;
-  size: string;
+  size?: string;
 }
 
 const TextAnimation: React.FC<TextAnimationProps> = ({ text, size }) => {
