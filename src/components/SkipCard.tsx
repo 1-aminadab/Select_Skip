@@ -17,7 +17,6 @@ interface SkipCardProps {
 const SkipCard: React.FC<SkipCardProps> = ({ skipData, disabled, selected, onSelect }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
- 
 
   return (
     <div
