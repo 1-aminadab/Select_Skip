@@ -9,6 +9,7 @@
   background: transparent;
   display: flex;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 /* 🌫️ Glassmorphism summary card */

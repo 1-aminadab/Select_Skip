@@ -55,9 +55,9 @@
 .glassCard {
   position: absolute;
   top: -0%;
-  left: -2%;
+  left: -3%;
   transform: rotate(15deg);
-  width: 110%;
+  width: 120%;
   height: 110%;
   background: var(--color-glass-dark); /* rgba(0, 0, 0, 0.733) */
   backdrop-filter: blur(12px);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './SummaryBar.module.css';
 import { useProvider } from '../context/AppContext';
@@ -7,8 +7,11 @@ import { steps } from '../data/steps';
 const SummaryBar: React.FC = () => {  
   const { selectedSkip, progress, decrementProgress, incrementProgress } = useProvider();
 
- console.log("selected skip", selectedSkip);
- 
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  console.log("selected skip", selectedSkip);
+
   const barRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -29,8 +32,31 @@ const SummaryBar: React.FC = () => {
     });
   }, []);
 
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // Scroll down
+        setShow(false);
+      } else {
+        // Scroll up
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
-    <div className={styles.fixedBar} ref={barRef}>
+    <div className={styles.fixedBar} ref={barRef} style={{ display: show ? 'flex' : 'none' }}>
       <div className={styles.summaryContainer}>
         <p className={styles.notice}>
           Imagery and information shown may not reflect exact shape or size. Options and accessories may cost extra.
@@ -45,19 +71,19 @@ const SummaryBar: React.FC = () => {
 
           <div className={styles.buttonGroup}>
             <button
-              ref={(el) => (buttonRefs.current[0] = el)}
+              ref={(el) => { buttonRefs.current[0] = el; }}
               className={styles.outlinedBtn}
-              style={{display: progress === 0 ? 'none' : 'inline-block'}}
+              style={{ display: progress === 0 ? 'none' : 'inline-block' }}
               onClick={decrementProgress}
             >
               ← Back
             </button>
             <button
-              ref={(el) => (buttonRefs.current[1] = el)}
+              ref={(el) => { buttonRefs.current[1] = el; }}
               className={styles.animatedBtn}
               onClick={incrementProgress}
             >
-             {progress === steps.length - 1 ? 'Submit' : 'Continue'}  <span className={styles.arrow}>→</span>
+              {progress === steps.length - 1 ? 'Submit' : 'Continue'} <span className={styles.arrow}>→</span>
             </button>
           </div>
         </div>

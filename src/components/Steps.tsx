@@ -4,12 +4,11 @@ import styles from "./Steps.module.css";
 import { useProvider } from "../context/AppContext";
 import { steps } from "../data/steps";
 
-
 function Steps() {
-    const { progress:currentStep} = useProvider();
-  
-  const blocksRef = useRef<any[]>([]);
-  const linesRef = useRef<any[]>([]);
+  const { progress: currentStep } = useProvider();
+
+  const blocksRef = useRef<HTMLDivElement[]>([]);
+  const linesRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
@@ -55,12 +54,14 @@ function Steps() {
       <div className={styles.progressWrapper}>
         {steps.map((step, i) => (
           <React.Fragment key={i}>
-            <div className={styles.stepWrapper}>
+            <div className={styles.stepWrapper} data-testid="step-wrapper">
               <div
                 className={`${styles.stepGlass} ${
                   i < currentStep ? styles.completed : ""
                 } ${i === currentStep ? styles.current : ""}`}
-                ref={(el) => (blocksRef.current[i] = el)}
+                ref={(el) => {
+                  blocksRef.current[i] = el!;
+                }}
               >
                 <span className={styles.icon}>{step.icon}</span>
               </div>
@@ -69,7 +70,10 @@ function Steps() {
             {i !== steps.length - 1 && (
               <div
                 className={styles.stepLine}
-                ref={(el) => (linesRef.current[i] = el)}
+                ref={(el) => {
+                  linesRef.current[i] = el!;
+                }}
+                 data-testid="step-line"
               />
             )}
           </React.Fragment>

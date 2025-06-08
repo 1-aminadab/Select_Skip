@@ -6,6 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   flex-wrap: wrap;
   width: 100%;
+  
 }
 
 .progressWrapper {
@@ -155,9 +156,11 @@
     width: 50px;
     height: 40px;
   }
-
+ .progressWrapper {
+    justify-content: flex-start;
+  }
   .stepLabel {
-    font-size: 9px;
+    font-size: 7px;
     width: 50px;
   }
 
