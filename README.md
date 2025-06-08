@@ -90,6 +90,7 @@ The new design improves trust, clarity, and ease-of-use, while reinforcing REM W
 ## 📸 Screenshots
 
 ### Before:
-
+![Screenshot](src/assets/screenshots/old-design.png)
 
 ### After:
+![Screenshot](src/assets/screenshots/re-design.png)
