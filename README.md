@@ -61,7 +61,6 @@ REM Waste is a leading UK provider of environmentally responsible skip hire and 
 
 ## 🔧 Tools & Technologies
 
-- **Design**: Figma, Adobe XD
 - **UI Concepts**: Glassmorphism, WCAG 2.1 accessibility, Mobile-first
 - **Implementation Stack** (optional): React, Vanila CSS, JavaScript
 
