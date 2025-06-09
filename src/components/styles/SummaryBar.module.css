@@ -12,7 +12,6 @@
   transition: all 0.3s ease;
 }
 
-/* 🌫️ Glassmorphism summary card */
 .summaryContainer {
   width: 100%;
   max-width: 1100px;
@@ -30,7 +29,6 @@
   overflow: hidden;
 }
 
-/* ℹ️ Info notice */
 .notice {
   font-size: var(--font-size-sm);
   color: var(--color-muted);
@@ -38,7 +36,6 @@
   line-height: 1.6;
 }
 
-/* Layout container */
 .content {
   display: flex;
   justify-content: space-between;
@@ -48,7 +45,6 @@
   width: 100%;
 }
 
-/* ℹ️ Skip info section */
 .skipInfo {
   display: flex;
   flex-wrap: wrap;
@@ -73,7 +69,6 @@
   color: var(--color-muted);
 }
 
-/* 🔘 Buttons layout */
 .buttonGroup {
   display: flex;
   gap: var(--spacing-sm);
@@ -84,7 +79,6 @@
   margin-bottom: 10px;
 }
 
-/* Outlined Button */
 .outlinedBtn {
   background: transparent;
   border: 2px solid var(--color-muted);
@@ -109,9 +103,12 @@
   transform: translateY(-2px);
 }
 
-/* Gradient Button */
 .animatedBtn {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   color: var(--color-white);
   padding: 10px 22px;
   border: none;
@@ -143,7 +140,6 @@
   transform: translateX(4px);
 }
 
-/* 📱 Responsive Breakpoints */
 @media (max-width: 768px) {
   .content {
     flex-direction: column;

@@ -19,12 +19,12 @@
 
 .scrollable-content {
   position: absolute;
-  top: 80px; /* Adjust based on Steps height */
-  bottom: 100px; /* Adjust based on SummaryBar height */
+  top: 80px;
+  bottom: 100px;
   left: 0;
   right: 0;
   overflow-y: auto;
   padding: 20px;
   z-index: 5;
-  transition: transform 0.3s ease; /* Optional for smooth translate */
+  transition: transform 0.3s ease;
 }
