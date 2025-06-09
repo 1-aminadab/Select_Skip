@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './styles/SkipCard.module.css';
-import skipImage from '../assets/skip.png';
+import skipImage from '../assets/images/skip.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { SkipData } from '../types';
